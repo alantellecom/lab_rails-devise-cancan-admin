@@ -8,7 +8,13 @@ module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
     before_action :authenticate_usuario! #modificado
-    #load_and_authorize_resource #modificado
+    load_and_authorize_resource #modificado
+    
+    def current_ability #modificado
+        @current_ability ||= Ability.new(current_usuario)
+    end
+  
+     
 
     def authenticate_admin
       # TODO Add authentication logic here.

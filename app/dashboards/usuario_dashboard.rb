@@ -10,7 +10,7 @@ class UsuarioDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     nome: Field::String,
-    role: Field::Select.with_options(collection: [:adm, :basico]),
+    role: Field::Select.with_options(collection: [:adm, :basico]),#modificado
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     email: Field::String,
